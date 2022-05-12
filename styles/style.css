@@ -1,0 +1,21 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.front-container{
+    height: 500px;
+}
+
+.front-heading{
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#particles-js{
+    height: 100%;
+    background-color: blue;
+}
