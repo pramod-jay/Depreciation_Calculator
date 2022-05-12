@@ -3,7 +3,7 @@ html{
 }
 
 #particles-js {
-    height: 100%;
+    height: 99%;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../images/1.jpg");
     background-size: cover;
@@ -12,6 +12,7 @@ html{
 
 .front-container{
     height: 500px;
+    margin: auto;
 }
 
 .front-heading{
@@ -19,3 +20,15 @@ html{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.form-lbl{
+    font-size: 12px;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    }
