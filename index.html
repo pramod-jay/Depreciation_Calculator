@@ -29,41 +29,45 @@
                         <form>
                             <div class="row col-md-12">
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Assest name">
+                                    <input type="text" class="form-control" id="name" placeholder="Assest name">
                                     <label for="floatingInput" class="form-lbl">Assest name</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="floatingInput" min="0" placeholder="Cost">
+                                    <input type="number" class="form-control" id="cost" min="0" placeholder="Cost">
                                     <label for="floatingInput" class="form-lbl">Cost</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="date" class="form-control" id="floatingInput" min="0" placeholder="Date of purchase">
+                                    <input type="date" class="form-control" id="date_purch" placeholder="Date of purchase">
                                     <label for="floatingInput" class="form-lbl">Date of purchase</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="floatingInput" min="0" placeholder="Useful life">
-                                    <label for="floatingInput" class="form-lbl">Useful life(Years)</label>
+                                    <input type="date" class="form-control" id="date_calc" placeholder="Useful life">
+                                    <label for="floatingInput" class="form-lbl">Day required to calculate</label>
                                 </div>
                             </div>
                             <div class="row col-md-12">
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="floatingInput" min="0" placeholder="Residual value">
+                                    <input type="number" class="form-control" id="use_life" min="0" placeholder="Useful life">
+                                    <label for="floatingInput" class="form-lbl">Useful life(Years)</label>
+                                </div>
+                                <div class="form-floating mb-3 col-md-3">
+                                    <input type="number" class="form-control" id="res_val" min="0" placeholder="Residual value">
                                     <label for="floatingInput" class="form-lbl">Residual value</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                        <select class="form-select" id="method" aria-label="Floating label select example">
                                           <option value="1">Straight line basis</option>
                                           <option value="2">Reducing balance basis</option>
                                         </select>
                                         <label for="floatingSelect" class="form-lbl">Select depreciation method</label>
                                       </div>
                                 </div>
-                                <div class="form-floating mb-3 col-md-6 d-flex align-items-center justify-content-end">
-                                    <div class="col-md-3">
-                                        <button type="button" class="btn btn-success">Calculate</button>
+                                <div class="form-floating mb-3 col-md-3 d-flex align-items-center justify-content-end">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-success" id="calc">Calculate</button>
                                     </div>
-                                    <div class="col-md-3 float-end">
+                                    <div class="col">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
@@ -71,7 +75,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <div class="modal-body" style="">
+                        <div class="modal-body">
                             <div class="col-md-6">
                                 <table class="table table-light table-hover">
                                     
