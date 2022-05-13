@@ -5,6 +5,11 @@
         <link href="styles/style.css" rel="stylesheet">
     </head>
     <body id="particles-js">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </symbol>
+        </svg>
             <div class="container col-md-6" style="margin:10% 25% 10% 25%;  position: absolute;">
                 <div class="container col-12 border border-3 border-primary rounded-3 front-container" style="background-color: rgba(255,255,255,0.8); padding: 0%;">
                     <div class="d-flex align-items-center justify-content-center" style="background-color: black; height: 20%;">
@@ -21,43 +26,49 @@
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                   <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="padding:0px 16px 0px 16px;">
+                    <div class="col-md-3">
                       <h5 class="modal-title" id="exampleModalLabel">Input Relevant Data</h5>
+                    </div>
+                    <div class="col-md-4 alert alert-danger d-flex align-items-center error_hide" role="alert" id="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                        Please fill required data fields
+                    </div>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form>
                             <div class="row col-md-12">
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="text" class="form-control" id="name" placeholder="Assest name">
+                                    <input type="text" class="form-control" id="name" placeholder="Assest name" required>
                                     <label for="floatingInput" class="form-lbl">Assest name</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="cost" min="0" placeholder="Cost">
+                                    <input type="number" class="form-control" id="cost" min="0" placeholder="Cost" required>
                                     <label for="floatingInput" class="form-lbl">Cost</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="date" class="form-control" id="date_purch" placeholder="Date of purchase">
+                                    <input type="date" class="form-control" id="date_purch" placeholder="Date of purchase" required>
                                     <label for="floatingInput" class="form-lbl">Date of purchase</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="date" class="form-control" id="date_calc" placeholder="Useful life">
+                                    <input type="date" class="form-control" id="date_calc" placeholder="Useful life" required>
                                     <label for="floatingInput" class="form-lbl">Day required to calculate</label>
                                 </div>
                             </div>
                             <div class="row col-md-12">
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="use_life" min="0" placeholder="Useful life">
+                                    <input type="number" class="form-control" id="use_life" min="0" placeholder="Useful life" required>
                                     <label for="floatingInput" class="form-lbl">Useful life(Years)</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
-                                    <input type="number" class="form-control" id="res_val" min="0" placeholder="Residual value">
+                                    <input type="number" class="form-control" id="res_val" min="0" placeholder="Residual value" required>
                                     <label for="floatingInput" class="form-lbl">Residual value</label>
                                 </div>
                                 <div class="form-floating mb-3 col-md-3">
                                     <div class="form-floating">
                                         <select class="form-select" id="method" aria-label="Floating label select example">
-                                          <option value="1">Straight line basis</option>
+                                          <option value="1" selected>Straight line basis</option>
                                           <option value="2">Reducing balance basis</option>
                                         </select>
                                         <label for="floatingSelect" class="form-lbl">Select depreciation method</label>
@@ -65,7 +76,7 @@
                                 </div>
                                 <div class="form-floating mb-3 col-md-3 d-flex align-items-center justify-content-end">
                                     <div class="col">
-                                        <button type="button" class="btn btn-success" id="calc">Calculate</button>
+                                        <button type="button" class="btn btn-success" id="calc" onclick="collect_data()">Calculate</button>
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,7 +88,12 @@
                     <div class="modal-footer">
                         <div class="modal-body">
                             <div class="col-md-6">
-                                <table class="table table-light table-hover">
+                                <table class="table table-light table-hover" id="table_PL">
+                                    
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-light table-hover" id="table_FL">
                                     
                                 </table>
                             </div>
@@ -86,6 +102,7 @@
                   </div>
                 </div>
               </div>
+        <script src="script/calculate.js"></script>
         <script src="script/particles.js" ></script>
         <script src="script/app.js" ></script>
         <script src="script/bootstrap.bundle.js" ></script> 

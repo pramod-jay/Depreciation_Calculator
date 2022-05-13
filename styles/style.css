@@ -32,3 +32,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
     }
+
+.error_hide{
+    visibility: hidden;
+    margin: 5px;
+}
+
+.error_show{
+    visibility: visible;
+}
