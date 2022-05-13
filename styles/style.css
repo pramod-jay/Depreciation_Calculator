@@ -41,3 +41,13 @@ input[type=number] {
 .error_show{
     visibility: visible;
 }
+
+.table_hide{
+    position: absolute;
+    visibility: hidden;
+}
+
+.table_show{
+    position: static;
+    visibility: visible;
+}

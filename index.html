@@ -30,9 +30,9 @@
                     <div class="col-md-3">
                       <h5 class="modal-title" id="exampleModalLabel">Input Relevant Data</h5>
                     </div>
-                    <div class="col-md-4 alert alert-danger d-flex align-items-center error_hide" role="alert" id="alert">
+                    <div class="col-md-7 alert alert-danger d-flex align-items-center error_hide" role="alert" id="alert">
                         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                        Please fill required data fields
+                        <p id="error_message" style="margin: 0px;"></p>
                     </div>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -87,16 +87,22 @@
                     </div>
                     <div class="modal-footer">
                         <div class="modal-body">
-                            <div class="col-md-6">
-                                <table class="table table-light table-hover" id="table_PL">
-                                    
-                                </table>
-                            </div>
-                            <div class="col-md-6">
-                                <table class="table table-light table-hover" id="table_FL">
-                                    
-                                </table>
-                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <table class="table table-light table-hover table_hide" id="table_PL">
+                                        <tr class="table-dark">
+                                            <th colspan=2>Profit & Lost Statement</th>
+                                        <tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-5">
+                                    <table class="table table-light table-hover table_hide" id="table_FL">
+                                        <tr class="table-dark">
+                                            <th colspan=2>Financial Statement</th>
+                                        <tr>
+                                    </table>
+                                </div>
+                        </div>
                         </div>
                     </div>
                   </div>
