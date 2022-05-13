@@ -51,3 +51,12 @@ input[type=number] {
     position: static;
     visibility: visible;
 }
+
+.home_avatar{
+    width: 150px;
+    filter: drop-shadow(0 0.2rem 0.70rem rgba(0, 0, 0, 0.5));
+    transition: transform .2s;
+}
+.home_avatar:hover{
+    transform: scale(1.1);
+}
