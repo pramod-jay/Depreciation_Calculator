@@ -1,4 +1,5 @@
 # Depreciation_Calculator
-calculate depreciation of an asset based on the given data.
-both straight line method and reducing balance method can be used to calculate depreciation.
-an assignment given for financial accounting module at university.
+calculate the depreciation of an asset based on the given data.
+both the straight-line and reducing balance methods can be used to calculate depreciation.
+an assignment is given for a financial accounting module at university.
+used HTML, CSS, JavaScript
